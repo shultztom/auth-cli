@@ -13,3 +13,7 @@ Flags:
   -h, --help             help for auth-cli
 
 ```
+
+Notes:
+
+- Requires .env in directory app is run

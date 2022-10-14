@@ -1,11 +1,10 @@
 package utils
 
 import (
+	"fmt"
 	"github.com/golang-jwt/jwt"
 	"os"
 )
-
-var jwtKey = []byte(os.Getenv("JWT_SECRET"))
 
 type Claims struct {
 	AppName string `json:"appName"`
@@ -13,6 +12,9 @@ type Claims struct {
 }
 
 func CreateToken(appName string) string {
+	jwtKey := []byte(os.Getenv("JWT_SECRET"))
+	fmt.Println(jwtKey)
+
 	// Create the JWT claims, which includes the username and expiry time
 	claims := &Claims{
 		AppName:        appName,
